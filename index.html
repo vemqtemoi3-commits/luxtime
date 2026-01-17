@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARÃO LUXTIME | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+        body { background-color: #050505; color: #ffffff; font-family: 'Montserrat', sans-serif; }
+        .gold-text { color: #d4af37; }
+        .gold-bg { background: linear-gradient(135deg, #d4af37 0%, #f9e29b 50%, #b38b2d 100%); color: #000; }
+        .product-card { background: #111; border: 1px solid #222; transition: 0.3s; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <nav class="flex justify-between items-center px-6 py-4 bg-black border-b border-[#d4af37]/20 sticky top-0 z-50">
+        <div class="text-xl font-black tracking-tighter uppercase">BARÃO <span class="gold-text">LUXTIME</span></div>
+    </nav>
+
+    <header class="py-12 text-center px-4">
+        <h1 class="text-3xl font-black uppercase italic tracking-tight">Linha Formula 1</h1>
+    </header>
+
+    <section class="py-10 px-4 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="product-card rounded-lg overflow-hidden flex flex-col" 
+             onclick="verProduto('TAG Heuer Formula 1 Solargraph', 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=600')">
+            <div class="bg-white p-4 h-80 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=600" class="h-full object-contain">
+            </div>
+            <div class="p-6">
+                <p class="font-bold text-lg uppercase">Formula 1 Solargraph</p>
+                <p class="gold-text text-2xl font-black">R$ 650,00</p>
+                <button class="w-full gold-bg py-3 mt-4 font-black uppercase text-[10px]">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="product-card rounded-lg overflow-hidden flex flex-col" 
+             onclick="verProduto('TAG Heuer Formula 1 Date Steel', 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=600')">
+            <div class="bg-white p-4 h-80 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=600" class="h-full object-contain">
+            </div>
+            <div class="p-6">
+                <p class="font-bold text-lg uppercase">Formula 1 Date Steel</p>
+                <p class="gold-text text-2xl font-black">R$ 650,00</p>
+                <button class="w-full gold-bg py-3 mt-4 font-black uppercase text-[10px]">Ver Detalhes</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function verProduto(nome, img) {
+            window.location.href = `produto.html?item=${encodeURIComponent(nome)}&img=${encodeURIComponent(img)}`;
+        }
+    </script>
+</body>
+</html>
