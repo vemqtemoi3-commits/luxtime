@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Finalizar Compra | Barão Luxtime</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Finalize sua compra com segurança. Pagamento via Pix ou cartão com Mercado Pago.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { background:#050505; color:#fff; font-family:Arial; }
+    .gold { color:#d4af37; }
+    .btn-gold {
+      background: linear-gradient(135deg,#d4af37,#f5e29a,#b38b2d);
+      color:#000;
+      font-weight:bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- TOPO -->
+<header class="p-5 border-b border-gray-900 text-center">
+  <div class="text-lg font-black uppercase italic">
+    BARÃO <span class="gold">LUXTIME</span>
+  </div>
+</header>
+
+<!-- CHECKOUT -->
+<section class="max-w-xl mx-auto px-6 py-12">
+
+  <h1 class="text-2xl font-black uppercase italic text-center mb-6">
+    Finalizar Compra
+  </h1>
+
+  <div class="border border-gray-700 p-6 mb-6 text-sm">
+    <p class="mb-2">Produto selecionado:</p>
+    <p id="produto" class="gold font-bold"></p>
+    <p id="valor" class="text-xl gold font-black mt-2"></p>
+    <p class="text-xs text-gray-400 mt-2">Frete grátis • Garantia de 12 meses</p>
+  </div>
+
+  <!-- BOTÃO MP -->
+  <a id="linkPagamento" href="#" target="_blank"
+     class="btn-gold block text-center py-4 text-xs uppercase tracking-widest mb-4">
+     Pagar com Pix ou Cartão
+  </a>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/5511930541428?text=Olá,%20quero%20finalizar%20minha%20compra%20Barão%20Luxtime."
+     class="border border-gray-600 block text-center py-4 text-xs uppercase">
+     Finalizar pelo WhatsApp
+  </a>
+
+  <p class="text-[10px] text-gray-500 text-center mt-6">
+    Pagamento processado com segurança pelo Mercado Pago.
+  </p>
+
+</section>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const kit = params.get('kit');
+
+  let produto = "";
+  let valor = "";
+  let link = "";
+
+  if (kit === "2") {
+    produto = "Kit 2 Relógios Premium";
+    valor = "R$ 900,00";
+    link = "https://www.mercadopago.com.br/SEU-LINK-KIT-2";
+  } else {
+    produto = "Relógio Premium Barão Luxtime";
+    valor = "R$ 650,00";
+    link = "https://www.mercadopago.com.br/SEU-LINK-KIT-1";
+  }
+
+  document.getElementById("produto").innerText = produto;
+  document.getElementById("valor").innerText = valor;
+  document.getElementById("linkPagamento").href = link;
+</script>
+
+</body>
+</html>
