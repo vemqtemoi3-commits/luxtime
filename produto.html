@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Produto | Barão Luxtime</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Relógio premium com design inspirado na alta relojoaria. Frete grátis, garantia de 12 meses e pagamento seguro.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { background:#050505; color:#fff; font-family:Arial; }
+    .gold { color:#d4af37; }
+    .btn-gold {
+      background: linear-gradient(135deg,#d4af37,#f5e29a,#b38b2d);
+      color:#000; font-weight:bold;
+    }
+    .fixed-buy {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #000;
+      border-top: 1px solid #333;
+      padding: 10px;
+      z-index: 50;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- TOPO -->
+<header class="p-5 border-b border-gray-900 flex justify-between items-center">
+  <div class="text-lg font-black uppercase italic">BARÃO <span class="gold">LUXTIME</span></div>
+  <a href="https://wa.me/5511930541428" class="text-xs gold uppercase">Suporte</a>
+</header>
+
+<!-- PRODUTO -->
+<section class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-10">
+
+  <!-- IMAGEM -->
+  <div class="bg-white p-6 flex justify-center">
+    <img src="assets/img/produto.jpg" class="max-h-96 object-contain">
+  </div>
+
+  <!-- INFO -->
+  <div>
+    <p class="text-xs uppercase text-gray-400 mb-1">Linha Premium</p>
+
+    <h1 class="text-2xl font-black uppercase italic mb-4">
+      Relógio Masculino Premium Barão Luxtime
+    </h1>
+
+    <div class="mb-4">
+      ⭐⭐⭐⭐⭐ <span class="text-gray-400 text-sm">(127 avaliações)</span>
+    </div>
+
+    <p class="text-gray-400 mb-4">
+      Design inspirado na alta relojoaria internacional, com acabamento sofisticado e presença marcante.
+    </p>
+
+    <div class="border border-gray-700 p-4 mb-6">
+      <p class="text-sm mb-1">Oferta de hoje</p>
+      <p class="text-2xl gold font-black">1 por R$ 650</p>
+      <p class="text-lg gold font-bold">2 por R$ 900</p>
+      <p class="text-xs text-yellow-500 mt-2">Frete grátis • Estoque limitado</p>
+    </div>
+
+    <!-- BOTÕES -->
+    <div class="flex gap-4 mb-6">
+      <a href="checkout.html?kit=1" class="btn-gold px-6 py-3 text-xs uppercase">Comprar 1 unidade</a>
+      <a href="checkout.html?kit=2" class="btn-gold px-6 py-3 text-xs uppercase">Comprar 2 unidades</a>
+    </div>
+
+    <a href="https://wa.me/5511930541428?text=Olá,%20quero%20comprar%20o%20relógio%20Barão%20Luxtime." 
+       class="border border-gray-600 px-6 py-3 inline-block text-xs uppercase">
+       Comprar pelo WhatsApp
+    </a>
+
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="bg-black py-10 px-6 text-sm grid md:grid-cols-3 gap-6 text-center">
+  <div>✔ Aço inox premium</div>
+  <div>✔ Movimento de alta precisão</div>
+  <div>✔ Garantia de 12 meses</div>
+  <div>✔ Resistente ao uso diário</div>
+  <div>✔ Envio rápido Brasil</div>
+  <div>✔ Pagamento seguro Mercado Pago</div>
+</section>
+
+<!-- DESCRIÇÃO -->
+<section class="max-w-4xl mx-auto px-6 py-12 text-sm text-gray-400 leading-relaxed">
+  <h2 class="text-xl gold font-black mb-4 uppercase italic">Descrição</h2>
+  <p>
+    O Relógio Barão Luxtime foi desenvolvido para homens que valorizam elegância, imponência e estilo.
+    Cada detalhe foi pensado para transmitir sofisticação, presença e personalidade.
+  </p>
+</section>
+
+<!-- BARRA FIXA MOBILE -->
+<div class="fixed-buy md:hidden">
+  <div class="flex justify-between items-center">
+    <span class="gold font-bold">R$ 650</span>
+    <a href="checkout.html?kit=1" class="btn-gold px-6 py-2 text-xs uppercase">
+      Comprar agora
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
