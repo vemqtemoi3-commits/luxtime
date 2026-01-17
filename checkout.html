@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra | BARÃO LUXTIME</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+        body { background-color: #050505; color: #ffffff; font-family: 'Montserrat', sans-serif; }
+        .gold-text { color: #d4af37; }
+        .gold-bg { background: linear-gradient(135deg, #d4af37 0%, #f9e29b 50%, #b38b2d 100%); color: #000; }
+        .input-field { background: #111; border: 1px solid #333; color: white; padding: 12px; border-radius: 4px; width: 100%; outline: none; }
+        .input-field:focus { border-color: #d4af37; }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <nav class="flex justify-center items-center px-6 py-6 bg-black border-b border-[#d4af37]/20">
+        <div class="text-xl font-black tracking-tighter uppercase">BARÃO <span class="gold-text">LUXTIME</span></div>
+    </nav>
+
+    <main class="max-w-md mx-auto p-6">
+        <div class="mb-8 text-center">
+            <h1 class="text-2xl font-bold uppercase italic mb-2">Checkout Seguro</h1>
+            <p class="text-gray-400 text-sm">Finalize seu pedido para a linha Formula 1</p>
+        </div>
+
+        <div class="bg-[#111] p-4 rounded-lg border border-gray-900 mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <p id="produto-nome" class="font-bold uppercase text-sm">Carregando produto...</p>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest">Entrega expressa inclusa</p>
+                </div>
+                <p id="produto-preco" class="gold-text font-black text-lg">R$ 0,00</p>
+            </div>
+        </div>
+
+        <form id="form-checkout" class="space-y-4">
+            <div>
+                <label class="text-[10px] uppercase tracking-widest text-gray-500 mb-1 block">Nome Completo</label>
+                <input type="text" id="nome" class="input-field" placeholder="Ex: João Silva" required>
+            </div>
+            <div>
+                <label class="text-[10px] uppercase tracking-widest text-gray-500 mb-1 block">CPF para Nota Fiscal</label>
+                <input type="text" id="cpf" class="input-field" placeholder="000.000.000-00" required>
+            </div>
+            <div>
+                <label class="text-[10px] uppercase tracking-widest text-gray-500 mb-1 block">Endereço de Entrega</label>
+                <input type="text" id="endereco" class="input-field" placeholder="Rua, número, bairro..." required>
+            </div>
+
+            <button type="submit" class="w-full gold-bg py-4 font-black uppercase text-xs tracking-widest mt-6 flex items-center justify-center gap-2">
+                <i class="fa-brands fa-pix"></i> Gerar QR Code de Pagamento
+            </button>
+        </form>
+
+        <div class="mt-8 text-center">
+            <div class="flex justify-center space-x-4 text-gray-600 text-xs mb-4">
+                <span><i class="fa-solid fa-shield-halved"></i> Ambiente Seguro</span>
+                <span><i class="fa-solid fa-truck"></i> Sedex Grátis</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Pega os dados da URL (vinda da index)
+        const urlParams = new URLSearchParams(window.location.search);
+        const nomeItem = urlParams.get('item') || "Relógio Formula 1";
+        const valorItem = urlParams.get('valor') || "650.00";
+
+        document.getElementById('produto-nome').innerText = nomeItem;
+        document.getElementById('produto-preco').innerText = `R$ ${valorItem}`;
+
+        document.getElementById('form-checkout').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aqui ele enviaria os dados para o seu sistema e geraria o PIX
+            // Por enquanto, vamos redirecionar para uma página de sucesso/pagamento
+            alert("Processando seu pedido... Gerando chave PIX de R$ " + valorItem);
+            
+            // Simulação de geração de pagamento
+            window.location.href = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=PagamentoLuxTime_${valorItem}`;
+        });
+    </script>
+</body>
+</html>
