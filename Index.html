@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXTIME | Relógios Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; }
+        .btn-gold { background-color: #c5a059; color: #000; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="flex justify-between items-center px-6 py-6 border-b border-gray-800">
+        <div class="text-2xl font-black">LUX<span class="text-[#c5a059]">TIME</span></div>
+        <div class="flex space-x-4"><i class="fa-solid fa-user"></i><i class="fa-solid fa-cart-shopping"></i></div>
+    </nav>
+
+    <header class="h-[60vh] flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-gray-900 to-black">
+        <h1 class="text-4xl font-black mb-4 uppercase">Domine seu tempo.</h1>
+        <p class="text-gray-400 mb-8">Relógios casuais e modernos com precisão absoluta.</p>
+        <a href="#produtos" class="btn-gold px-10 py-4 rounded uppercase text-sm tracking-widest">Comprar agora</a>
+    </header>
+
+    <section id="produtos" class="py-16 px-6">
+        <h2 class="text-xl font-bold mb-8 border-l-4 border-[#c5a059] pl-3 italic">DESTAQUES</h2>
+        <div class="grid grid-cols-1 gap-10">
+            <div class="bg-[#111] p-4 rounded-xl border border-gray-800">
+                <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600" class="rounded-lg mb-4">
+                <h3 class="font-bold text-lg">Midnight Stealth Edition</h3>
+                <p class="text-[#c5a059] font-black text-xl mt-2">R$ 719,20</p>
+                <button onclick="irParaPagamento(719.20)" class="w-full mt-4 bg-white text-black py-3 rounded font-bold uppercase text-xs">Pagar via PIX</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-8 text-center text-gray-600 text-xs border-t border-gray-800">
+        <p>Pagamento Seguro via C6 Bank | CPF: 382.630.078-52</p>
+    </footer>
+
+    <script>
+        function irParaPagamento(valor) {
+            alert("Gerando QR Code PIX para sua conta C6...");
+            window.location.href = "/checkout.html?valor=" + valor;
+        }
+    </script>
+</body>
+</html>
